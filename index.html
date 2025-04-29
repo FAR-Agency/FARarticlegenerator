@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur d'article SEO - Antho Plomberie</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    .container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, textarea, select { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #004080; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #00264d; }
+    pre { background: #f0f0f0; padding: 10px; white-space: pre-wrap; word-wrap: break-word; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Générateur d'article SEO</h1>
+    <form id="seoForm">
+      <label>Type d'intervention :</label>
+      <input type="text" id="type" placeholder="Ex: Installation de chaudière">
+      <label>Ville d'intervention :</label>
+      <input type="text" id="ville" placeholder="Ex: Roubaix">
+      <label>Détails complémentaires :</label>
+      <textarea id="details" placeholder="Ex: Maison individuelle, pose murale, marque utilisée, etc..."></textarea>
+      <button type="submit">Générer l'article</button>
+    </form>
+    <h2>Article généré :</h2>
+    <pre id="output"></pre>
+  </div>
+
+  <script>
+    document.getElementById("seoForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const type = document.getElementById("type").value.trim();
+      const ville = document.getElementById("ville").value.trim();
+      const details = document.getElementById("details").value.trim();
+
+      const entreprise = "Antho Plomberie";
+      const article = `# ${type} à **${ville}**\n\nBasée à **${ville}**, **${entreprise}** accompagne ses clients dans leurs projets de ${type.toLowerCase()}. Nous sommes récemment intervenus pour une réalisation complète dans cette zone, avec un service sur mesure et une attention particulière portée aux détails.\n\n## Une intervention soignée, adaptée à chaque besoin\n\nQue ce soit pour une urgence ou un chantier planifié, **${entreprise}** propose des prestations de qualité en matière de ${type.toLowerCase()}. ${details}\n\n## Pourquoi faire appel à ${entreprise} ?\n\n- **Expertise** : Des années d'expérience dans le domaine.\n- **Qualité** : Matériaux performants et durables.\n- **Réactivité** : Intervention rapide à **${ville}** et aux alentours.\n- **Accompagnement** : Un suivi personnalisé à chaque étape.\n\nPour tout besoin en ${type.toLowerCase()} à **${ville}**, contactez **${entreprise}** dès aujourd'hui pour un **devis gratuit** et une **intervention professionnelle**.\n\n---\n\n**Méta-description SEO :**\n> ${type} à ${ville} : faites appel à ${entreprise} pour une prestation sur mesure, rapide et fiable. Devis gratuit disponible.`;
+
+      document.getElementById("output").textContent = article;
+    });
+  </script>
+</body>
+</html>
